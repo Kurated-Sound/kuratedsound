@@ -12,59 +12,86 @@ const Home = () => (
       <Row>COMPREHENSIVE SERVICES</Row>
       <Row className="serviceRow">
         <Col>
-          <Card style={{ width: '24rem' }}>
+          <Card style={{ width: '20rem' }}>
             <Card.Body>
+              <i class="fab fa-twitch fa-fw"></i>
               <Card.Title>Service 1</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Icon 1</Card.Subtitle>
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
               </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
             </Card.Body>
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: '24rem' }}>
+          <Card style={{ width: '20rem' }}>
             <Card.Body>
+              <i class="fab fa-twitch fa-fw"></i>
               <Card.Title>Service 2</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Icon 2</Card.Subtitle>
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
               </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
             </Card.Body>
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: '24rem' }}>
+          <Card style={{ width: '20rem' }}>
             <Card.Body>
+              <i class="fab fa-twitch fa-fw"></i>
               <Card.Title>Service 3</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Icon 3</Card.Subtitle>
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
               </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
             </Card.Body>
           </Card>
         </Col>
       </Row>
     </Container>
     {/* Benefits container. "What can we do for you?" */}
-    <Container className='benefits-container'>
+    <Container className='services-container'>
       <Row>
-        <Col><h3>We create unique experiences.</h3></Col>
-        <Col><p>Feel the music and turn your social gatherings into more than just the typical meet-up occasion.</p></Col>
-        <Col><p>We are not your ordinary bluetooth speaker or sound bar playing through your phone.</p></Col>
-        <Col><p> Weddings, outdoor birthday bash, baby showers, gender reveals, bachelor/bachelorette parties, DJs who are in need of equipment for their gigs, we do it all!</p></Col>
+        <Col>
+          <Card style={{ width: '20rem' }}>
+            <Card.Body>
+              <i class="fab fa-twitch fa-fw"></i>
+              <Card.Title>Service 1</Card.Title>
+              <Card.Text>
+                We create unique experiences.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: '20rem' }}>
+            <Card.Body>
+              <i class="fab fa-twitch fa-fw"></i>
+              <Card.Title>Service 2</Card.Title>
+              <Card.Text>
+                Feel the music and turn your social gatherings into more than just the typical meet-up occasion.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: '20rem' }}>
+            <Card.Body>
+              <i class="fab fa-twitch fa-fw"></i>
+              <Card.Title>Service 3</Card.Title>
+              <Card.Text>
+                We are not your ordinary bluetooth speaker or sound bar playing through your phone.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
     </Container>
+    <hr />
     {/* Features container. How can we do it for you?*/}
     {/* This container will have 4 equal sized pictures that are clickable with text inside saying what it will direct you to: reservations, our tech, about us, contact us */}
     <Container className='features-parent-container'>
-      <Container className='features-container'>
+      {/* <Container className='features-container'>
         <Card>
           <Card.Header>Quote</Card.Header>
           <Card.Body>
@@ -81,17 +108,65 @@ const Home = () => (
           </Card.Body>
         </Card>
         <Row><p>There are particular brands that we use and they are considered some of the best in the current market today:</p></Row>
-      </Container>
+      </Container> */}
+
       <Container>
-        <Row> 
-            <i>Behringer</i>
-            <i>Mackie</i>
-            <i>QSC</i>
-            <i>Turbosound</i>
-            <i>Pioneer</i>
-            <i>Shure</i>
-            <i>Sennheiser</i>
-            <Row>Aside from our latest technologies, our best asset is our very own Kurated Sound co-founder and DJ, Khalil! Or better known as Kleos- his on-stage name. He is our personal DJ and can spin the dopest DJ set for your event - bringing to you the best and latest electronic music in today's lineup.</Row>
+        <Row>
+          <Col>
+            <Card style={{ width: '10rem' }}>
+              <Card.Body>
+                <i class="fab fa-twitch fa-fw"></i>
+                <Card.Text>Pioneer</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">text</Card.Subtitle>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: '10rem' }}>
+              <Card.Body>
+                <i class="fab fa-twitch fa-fw"></i>
+                <Card.Text>QSC</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">text</Card.Subtitle>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: '10rem' }}>
+              <Card.Body>
+                <i class="fab fa-twitch fa-fw"></i>
+                <Card.Text>Turbosound</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">text</Card.Subtitle>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: '10rem' }}>
+              <Card.Body>
+                <i class="fab fa-twitch fa-fw"></i>
+                <Card.Text>Mackie</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">text</Card.Subtitle>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: '10rem' }}>
+              <Card.Body>
+                <i class="fab fa-twitch fa-fw"></i>
+                <Card.Text>Shure</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">text</Card.Subtitle>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: '10rem' }}>
+              <Card.Body>
+                <i class="fab fa-twitch fa-fw"></i>
+                <Card.Text>Sennheiser</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">text</Card.Subtitle>
+              </Card.Body>
+            </Card>
+          </Col>
+            {/* <Row>Aside from our latest technologies, our best asset is our very own Kurated Sound co-founder and DJ, Khalil! Or better known as Kleos- his on-stage name. He is our personal DJ and can spin the dopest DJ set for your event - bringing to you the best and latest electronic music in today's lineup.</Row> */}
         </Row>
       </Container>
     </Container>
