@@ -10,7 +10,7 @@ const Home = () => (
     {/* This container which will contain services in circular cards with a logo symbolizing what kind of services aka 'Social Proof'*/}
     <Container className='services-container'>
       <Row>COMPREHENSIVE SERVICES</Row>
-      <Row>
+      <Row className="serviceRow">
         <Col>
           <Card style={{ width: '24rem' }}>
             <Card.Body>
