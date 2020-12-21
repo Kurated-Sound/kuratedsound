@@ -10,7 +10,7 @@ dotenv.config();
 const app = express(); // creates a new express app
 
 //middlewhere runs when you want to interact with routes of express
-app.use(express.json());
+app.use(express.json()); 
 app.use(cors());
 
 // app.use(bodyParser.json({ limit: "30mb", extended: true}));
@@ -20,7 +20,7 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`server running on port: ${PORT}`))
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true},
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true},
     (err) => { if (err) throw err;
     console.log("MongoDB connection established")
 })
@@ -29,6 +29,6 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true,
 mongoose.set('useFindAndModify', false)
 
 
-// set to use Routers (including these routes as middleware
+// Express Middleware
 //localhost 5000/users will use this route
 app.use("/users", userRouter);
