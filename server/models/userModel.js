@@ -8,4 +8,5 @@ const userSchema = new mongoose.Schema({
 
 
 
-
+                //                    // user will be referenced, userSchema
+module.export = User = mongoose.model("user", userSchema);

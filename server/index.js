@@ -1,10 +1,11 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-// import bodyParser from 'body-parser';
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-require('dotenv').config()
+
+import dotenv from 'dotenv';
+import userRouter from './routes/userRouter.js'
+
+dotenv.config();
 
 const app = express(); // creates a new express app
 
@@ -26,3 +27,8 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true,
    
 
 mongoose.set('useFindAndModify', false)
+
+
+// set to use Routers (including these routes as middleware
+//localhost 5000/users will use this route
+app.use("/users", userRouter);
