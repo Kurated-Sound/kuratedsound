@@ -6,7 +6,7 @@ export const loginUser = async (req, res) => {
     try {
         const {email, password} = req.body
 
-        const user = await User.findOne({email: email, password: password})
+        const user = await User.findOne({ email: email })
         const foundEmail = await User.findOne({email: email})
 
         if (!email || !password) {
@@ -24,15 +24,24 @@ export const loginUser = async (req, res) => {
             return res.status(400).json({msg: "Invalid Credentials"})
         }
    
-        // JWT token will keep track and retrieve the _id of the currently logged in User
-        // Stores which user has been logged in, and requires a password 
-        // This password will verify who's logged in to prevent duplicates
-        const token = Jwt.sign({ id: user._id }, process.env.JWT_TOKEN)
+        // JWT token looks for ID of the user._id and JWT password
+        // Password is to verify it's not a duplicate web token
+        const token = Jwt.sign( { id: user._id }, process.env.JWT_SECRET )
+
+        res.json({
+            token,
+            user: {
+                id: user._id,
+                displayName: user.displayName,
+                email: user.email
+            }
+        })
+
 
     } catch (error) {
         return res
-            .status(400)
-            .json({msg: "Incorrect Email or Password"})
+            .status(500)
+            .json({error: error.message})
     }
 }
 
