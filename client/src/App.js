@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { Home, About, Services, Contact, SignUp, SessionForm, NaviBar, Jumbo, Footer} from './components/'
-import Layout from './Layout'
+import { Home, About, Services, Contact, SignUp, NaviBar, Jumbo, Footer} from './components/';
+import Layout from './Layout';
 
 const App = () => {
   return (

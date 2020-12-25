@@ -1,8 +1,6 @@
 import React from 'react'
 import './Footer.css';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
+import { InputGroup, FormControl, Button } from 'react-bootstrap/';
 
 const Footer = () => {
   return (
@@ -78,11 +76,6 @@ const Footer = () => {
       {/* Alone container with copyright and designed by text. 
       Not apart of parent container */}
       <div className='container'>
-        <div className='row'>
-          <p className='mx-auto small mb-0'>
-            Designed by Kevin Tran
-          </p>
-        </div>
         <div className='row'>
           <p className='mx-auto small'>
             &copy;{new Date().getFullYear()} Kurated Sound Inc., All Rights Reserved.
