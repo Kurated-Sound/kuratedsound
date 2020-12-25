@@ -1,8 +1,6 @@
 import React from 'react'
-import '../Home/Box.css';
+import './About.css';
 import Card from 'react-bootstrap/Card';
-
-// test
 
 const About = () => {
   const cardInfo = [
