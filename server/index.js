@@ -1,19 +1,34 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-const app = express();
+import dotenv from 'dotenv';
+import userRouter from './routes/userRouter.js'
 
-app.use(bodyParser.json({ limit: "30mb", extended: true}));
-app.use(bodyParser.urlencoded({ limited: "30mb", extended: true}));
+dotenv.config();
+
+const app = express(); // creates a new express app
+
+//middlewhere runs when you want to interact with routes of express
+app.use(express.json()); 
 app.use(cors());
 
-const CONNECTION_URL="mongodb+srv://vincengai:whatpassword@cluster0.qnlwo.mongodb.net/test"
-const PORT = process.env.PORT || 5000;
+// app.use(bodyParser.json({ limit: "30mb", extended: true}));
+// app.use(bodyParser.urlencoded({ limited: "30mb", extended: true}));
 
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
-    .then( () => app.listen(PORT, () => console.log(`server running on port: ${PORT}`)))
-    .catch( (error) => console.log(error.message))
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`server running on port: ${PORT}`))
+
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true},
+    (err) => { if (err) throw err;
+    console.log("MongoDB connection established")
+})
+   
 
 mongoose.set('useFindAndModify', false)
+
+
+// Express Middleware
+//localhost 5000/users will use this route
+app.use("/users", userRouter);
