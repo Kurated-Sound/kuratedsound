@@ -2,6 +2,7 @@ import User from '../models/userModel.js'
 import Bcrypt from 'bcryptjs'
 import Jwt from 'jsonwebtoken';
 
+
 export const loginUser = async (req, res) => {
     try {
         const {email, password} = req.body
@@ -36,7 +37,6 @@ export const loginUser = async (req, res) => {
                 email: user.email
             }
         })
-
 
     } catch (error) {
         return res
