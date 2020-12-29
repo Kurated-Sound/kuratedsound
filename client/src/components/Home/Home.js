@@ -1,19 +1,20 @@
 import React from 'react';
 import './Home.css';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import ImageCard from '../Cards/ImageCard.js';
 import TripleCards from '../Cards/TripleCards.js';
-import QuoteCard from '../Cards/QuoteCard.js';
+import CloseOutCard from '../Cards/CloseOutCard.js';
 import BrandLogosCard from '../Cards/BrandLogosCard';
+import BlankTextCard from '../Cards/BlankTextCard';
 
 const Home = () => (
 <<<<<<< HEAD
   
   <Container className='full-container'>
-    <TripleCards />
-    <ImageCard />
-    <QuoteCard />
+    <BlankTextCard />
+    <hr />
     <BrandLogosCard />
+<<<<<<< HEAD
 =======
   <Container>
     {/* This container which will contain services in circular cards with a logo symbolizing what kind of services aka 'Social Proof'*/}
@@ -195,6 +196,11 @@ const Home = () => (
       </Col>
     </Container>
 >>>>>>> 9c2e30e0dfcaa6413e6b571d293ef5d1a31647dc
+=======
+    <hr />
+    <ImageCard />
+    <CloseOutCard />
+>>>>>>> created multiple cards as sections for the homepage using css and bootstrap
   </Container>
 );
 

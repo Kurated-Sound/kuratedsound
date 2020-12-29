@@ -5,7 +5,7 @@ import { InputGroup, FormControl, Button } from 'react-bootstrap/';
 const Footer = () => {
   return (
     <div className='main-footer'>
-      <div className='parent-container d-flex'>
+      <div className='d-flex'>
         {/* 1st child container with logo, explore, fun stuff col */}
         <div className='container mx-0 pl-4 pr-0'>
           <div className='row'>
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
             {/* Col 3 */}
             {/* Contact Column */}
-            <div className='col-lg-3 col-md-4 text-center'>
+            {/* <div className='col-lg-3 col-md-4 text-center'>
               <h5 className='lead'>Fun Stuff</h5>
               <ul className='list-unstyled flex-lg-row justify-content-center'>
                 <li>Electronic music</li>
@@ -45,7 +45,7 @@ const Footer = () => {
                 <li>Equipment</li>
                 <li>DJing</li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* 2nd container with subscribe email form */}
