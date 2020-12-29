@@ -1,14 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { Home, About, Services, Contact, SignUp, NaviBar, Jumbo, Footer} from './components/';
-import Layout from './Layout';
 
 const App = () => {
   return (
     <>
     <NaviBar />
     <Jumbo />
-      <Layout>
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
@@ -18,7 +16,6 @@ const App = () => {
             <Route exact path='/signup' component={SignUp} />
           </Switch>
         </Router>
-      </Layout>
       <Footer />
     </>
   );
