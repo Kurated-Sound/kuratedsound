@@ -2,8 +2,34 @@ import User from '../models/userModel.js'
 import Bcrypt from 'bcryptjs'
 import Jwt from 'jsonwebtoken';
 
+export const deleteUser = async (req, res) => {
+
+    try {
+        const deletedUser = await User.findByIdAndDelete(req.user)
+        res.json(deletedUser)
+    } catch (error) {
+        
+    }
+}
+export const validateToken = async (req, res) => {
+
+    const token = req.header("x-auth-token")
+    if (!token) return res.json(false)
+
+    const verifiedToken = Jwt.verify(token, process.env.JWT_SECRET)
+    if (!verifiedToken) return res.json(false)
+
+    const user = await User.findById(verifiedToken.id);
+    if (!user) return res.json(false)
+
+    return res.json(true)
+}
+
+
+
 
 export const loginUser = async (req, res) => {
+
     try {
         const {email, password} = req.body
 

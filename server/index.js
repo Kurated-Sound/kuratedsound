@@ -25,7 +25,6 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true,
     console.log("MongoDB connection established")
 })
    
-
 mongoose.set('useFindAndModify', false)
 
 
