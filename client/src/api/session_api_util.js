@@ -1,10 +1,5 @@
 import axios from 'axios';
 
-const url = "http://localhost:5000/users"
-
-
-import axios from 'axios';
-
 export const setAuthToken = token => {
   if (token) {
     axios.defaults.headers.common['Authorization'] = token;

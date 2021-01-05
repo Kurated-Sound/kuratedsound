@@ -3,7 +3,6 @@ import Bcrypt from 'bcryptjs'
 import Jwt from 'jsonwebtoken';
 
 export const deleteUser = async (req, res) => {
-
     try {
         const deletedUser = await User.findByIdAndDelete(req.user)
         res.json(deletedUser)
