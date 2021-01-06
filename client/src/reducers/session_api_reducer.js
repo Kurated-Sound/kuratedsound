@@ -4,7 +4,7 @@ import {
     RECEIVE_USER_SIGN_IN
 } from '../actions/session_actions'
 
-mport { RECEIVE_USER } from './../actions/user_actions';
+import { RECEIVE_USER } from '../actions/user_actions';
 
 const initialState = {
     isAuthenticated: false,
