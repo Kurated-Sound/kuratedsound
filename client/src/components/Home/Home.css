@@ -9,7 +9,7 @@
   padding-right: calc((100vw - 100%) / 2) !important;
 } */
 
-.img-1 {
+/* .img-1 {
   content: url(https://images.pexels.com/photos/3279692/pexels-photo-3279692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   display: block;
   position: absolute;
@@ -41,7 +41,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-}
+}  */
 
 .jumbo-img {
   height: 650px;
