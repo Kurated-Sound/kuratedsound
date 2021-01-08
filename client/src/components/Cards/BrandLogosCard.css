@@ -1,0 +1,13 @@
+.brand-logo-container {
+  padding-top: 130px;
+  padding-bottom: 0px;
+}
+.crop {
+  height: 300px;
+  width: 500px;
+  overflow: hidden;
+}
+.crop img {
+  height: auto;
+  width: 500px;
+}

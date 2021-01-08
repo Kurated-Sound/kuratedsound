@@ -2,14 +2,6 @@ import User from '../models/userModel.js'
 import Bcrypt from 'bcryptjs'
 import Jwt from 'jsonwebtoken';
 
-export const deleteUser = async (req, res) => {
-    try {
-        const deletedUser = await User.findByIdAndDelete(req.user)
-        res.json(deletedUser)
-    } catch (error) {
-        
-    }
-}
 export const validateToken = async (req, res) => {
 
     const token = req.header("x-auth-token")
@@ -26,6 +18,15 @@ export const validateToken = async (req, res) => {
 
 
 
+export const deleteUser = async (req, res) => {
+
+    try {
+        const deletedUser = await User.findByIdAndDelete(req.user)
+        res.json(deletedUser)
+    } catch (error) {
+        
+    }
+}
 
 export const loginUser = async (req, res) => {
 

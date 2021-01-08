@@ -5,14 +5,12 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 const Jumbo = () => {
   return (
     <Jumbotron className='jumbo-img'>
-      <div>
         <div>
           <h1 className='header-1'>{`              
             Bringing to you an extraordinary sound experience
             for all events and occasions.
           `}</h1>
         </div>
-      </div>
     </Jumbotron>
   )
 };

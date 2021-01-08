@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import App from './App';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { setAuthToken } from "./api/session_api_util";
 import jwt_decode from "jwt-decode";
