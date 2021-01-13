@@ -17,6 +17,7 @@ export const validateToken = async (req, res) => {
 }
 
 
+
 export const deleteUser = async (req, res) => {
 
     try {

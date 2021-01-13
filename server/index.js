@@ -25,10 +25,9 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true,
     console.log("MongoDB connection established")
 })
    
-
 mongoose.set('useFindAndModify', false)
 
 
 // Express Middleware
 //localhost 5000/users will use this route
-app.use("/users", userRouter);
+app.use("/api/users", userRouter);
