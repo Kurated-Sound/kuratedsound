@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
 import { Home, About, Services, Contact, Register, NaviBar, Jumbo, Footer} from './components/';
 import LoginFormContainer from './components/Session_Forms/Login_form_container';
-import Layout from './Layout';
 
 const App = () => {
   return (
