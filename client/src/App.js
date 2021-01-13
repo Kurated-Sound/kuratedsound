@@ -6,7 +6,6 @@ const App = () => {
   return (
     <>
     <NaviBar />
-    <Jumbo />
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
