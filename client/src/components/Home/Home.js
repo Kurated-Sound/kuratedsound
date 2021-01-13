@@ -8,16 +8,20 @@ import BrandLogosCard from '../Cards/BrandLogosCard';
 import BlankTextCard from '../Cards/BlankTextCard';
 
 const Home = () => (
-<<<<<<< HEAD
   
   <Container className='full-container'>
     <BlankTextCard />
     <hr />
-    <BrandLogosCard />
-<<<<<<< HEAD
-=======
-  <Container>
-    {/* This container which will contain services in circular cards with a logo symbolizing what kind of services aka 'Social Proof'*/}
+    <BrandLogosCard /
+  
+  
+  
+  
+  
+  er>
+    {/* This container which will contain 
+    
+    s in circular cards with a logo symbolizing what kind of services aka 'Social Proof'*/}
     <Container className='services-container'>
       <Row>COMPREHENSIVE SERVICES</Row>
       <Row className="serviceRow">
@@ -195,12 +199,11 @@ const Home = () => (
         I like music. Do you like music? Here are our youtube and spotify channels. :)
       </Col>
     </Container>
->>>>>>> 9c2e30e0dfcaa6413e6b571d293ef5d1a31647dc
-=======
+
     <hr />
     <ImageCard />
     <CloseOutCard />
->>>>>>> created multiple cards as sections for the homepage using css and bootstrap
+
   </Container>
 );
 
