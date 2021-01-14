@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { setAuthToken } from "./api/session_api_util";
 import jwt_decode from "jwt-decode";
 import configureStore from "./store/store";
-import {logout} from './actions/session_actions'
+import { logoutUser } from './actions/session_actions'
 
 import Root from "./components/root";
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // If the user's token has expired
     if (decodedUser.exp < currentTime) {
       // Logout the user and redirect to the login page
-      store.dispatch(logout());
+      store.dispatch(logoutUser());
       window.location.href = "/";
     }
   } else {

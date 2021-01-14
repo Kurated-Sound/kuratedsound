@@ -21,14 +21,18 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const logoutUser = () => ({
-  type: RECEIVE_USER_LOGOUT
+export const clearErrors = () => ({
+  type: CLER_ERRORS
+})
+
+export const logoutCurrentUser = () => ({
+  type: LOGOUT_USER
 });
 
 
 // Thunk Action Creators
-export const signup = user => dispatch => (
-  APIUtil.signup(user)
+export const signupUser = user => dispatch => (
+  APIUtil.signupUser(user)
     .then( (res) => {
             const { token } = res.data;
             localStorage.setItem('jwtToken', token);
@@ -43,8 +47,8 @@ export const signup = user => dispatch => (
   .catch(err => dispatch(receiveErrors(err.response.data)))
 );
 
-export const login = user => dispatch => (
-  APIUtil.login(user)
+export const loginUser = user => dispatch => (
+  APIUtil.loginUser(user)
     .then( (res) => {
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
@@ -58,8 +62,8 @@ export const login = user => dispatch => (
   })
 )
 
-export const logout = () => dispatch => {
+export const logoutUser = () => dispatch => {
   localStorage.removeItem('jwtToken')
   APIUtil.setAuthToken(false)
-  dispatch(logoutUser())
+  dispatch(logoutCurrent())
 };

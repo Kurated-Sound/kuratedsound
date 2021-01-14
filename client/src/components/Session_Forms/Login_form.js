@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { loginUser } from '../../actions/session_actions'
 
 import useStyles from './styling/login_style';
 
@@ -9,25 +10,42 @@ import {
 } from './styling/material_ui_index';
 
 
-export default function SignInSide() {
+export const SessionForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  
-  //boiler plate
-  const dispatch = useDispatch();
+  // similar to mSTP errors: state.errors.session passing in State as a prop
+  const sessionErrors = useSelector( (state) => state.errors.session )
 
+  // similar to mDTP , with this you can import actions and use dispatch freely?
+  const dispatch = useDispatch();
+  
+  //styling 
   const classes = useStyles();
 
+
   const handleSubmit = async (e) => {
+    let res; 
+    e.preventDefault();
+
     let userData = {
-      email: this.state.email,
-      password: this.state.password
+      email: email,
+      password: password
     };
     
-    res = await dispatch(loginUser(userData))
+      res = await dispatch(loginUser(userData))
     // this.props.login(userData);
   };
+
+  const update = (field) => {
+    console.log(e)
+    return (e) => {
+      const value = e.currentTarget.value;
+
+      if (field == 'email') setEmail=(value)
+      if (field == 'password') setPassword=(value)
+    }
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -42,11 +60,14 @@ export default function SignInSide() {
             Sign in
           </Typography>
 
-          <form className={classes.form} noValidate onSubmit={handleSubmit()}>
-            <TextField
+          <form className={classes.form} noValidate onSubmit={handleSubmit}>
+            <input
+              required
+              value={email}
+              placeholder="Email Address"
+              onChange={update('email')}
               variant="outlined"
               margin="normal"
-              required
               fullWidth
               id="email"
               label="Email Address"
@@ -54,10 +75,13 @@ export default function SignInSide() {
               autoComplete="email"
               autoFocus
             />
-            <TextField
+            <input
+              required
+              value={password}
+              placeholder="Password"
+              onChange={update('password')}
               variant="outlined"
               margin="normal"
-              required
               fullWidth
               name="password"
               label="Password"
@@ -99,3 +123,5 @@ export default function SignInSide() {
     </Grid>
   );
 }
+
+export default SessionForm
