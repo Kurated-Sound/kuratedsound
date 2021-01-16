@@ -7,3 +7,4 @@ export { default as Login } from './Session_Forms/Login_form';
 export { default as NaviBar } from './Navibar/Navibar';
 export { default as Jumbo } from './Home/Jumbo';
 export { default as Footer } from './Footer/Footer';
+export { default as LoginForm } from './Session_Forms/Login_form';

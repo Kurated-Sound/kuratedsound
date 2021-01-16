@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import dotenv from 'dotenv';
-import userRouter from './routes/userRouter.js'
+import userRoutes from './routes/userRoutes.js'
 
 dotenv.config();
 
@@ -30,4 +30,4 @@ mongoose.set('useFindAndModify', false)
 
 // Express Middleware
 //localhost 5000/users will use this route
-app.use("/api/users", userRouter);
+app.use("/user", userRoutes);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { loginUser } from '../../actions/session_actions'
+import { signIn } from '../../actions/session_actions'
 
 import useStyles from './styling/login_style';
 
@@ -8,7 +8,7 @@ import {
   Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, 
   Link, Paper, Box, Grid, LockOutlinedIcon, Typography
 } from './styling/material_ui_index';
-
+//
 
 export const SessionForm = () => {
   const [email, setEmail] = useState('');
@@ -26,24 +26,23 @@ export const SessionForm = () => {
 
   const handleSubmit = async (e) => {
     let res; 
+
     e.preventDefault();
 
-    let userData = {
+    let formData = {
       email: email,
       password: password
     };
-    
-      res = await dispatch(loginUser(userData))
-    // this.props.login(userData);
+
+    res = await dispatch(signIn(formData))
   };
 
-  const update = (field) => {
-    console.log(e)
+  const handleChange = (field) => {
     return (e) => {
       const value = e.currentTarget.value;
 
-      if (field == 'email') setEmail=(value)
-      if (field == 'password') setPassword=(value)
+      if (field == 'email') setEmail(value)
+      if (field == 'password') setPassword(value)
     }
   }
 
@@ -65,7 +64,7 @@ export const SessionForm = () => {
               required
               value={email}
               placeholder="Email Address"
-              onChange={update('email')}
+              onChange={handleChange('email')}
               variant="outlined"
               margin="normal"
               fullWidth
@@ -79,7 +78,7 @@ export const SessionForm = () => {
               required
               value={password}
               placeholder="Password"
-              onChange={update('password')}
+              onChange={handleChange('password')}
               variant="outlined"
               margin="normal"
               fullWidth

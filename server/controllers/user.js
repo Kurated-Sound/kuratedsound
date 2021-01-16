@@ -1,21 +1,6 @@
-import User from '../models/userModel.js'
+import User from '../models/userSchema.js'
 import Bcrypt from 'bcryptjs'
 import Jwt from 'jsonwebtoken';
-
-export const validateToken = async (req, res) => {
-
-    const token = req.header("x-auth-token")
-    if (!token) return res.json(false)
-
-    const verifiedToken = Jwt.verify(token, process.env.JWT_SECRET)
-    if (!verifiedToken) return res.json(false)
-
-    const user = await User.findById(verifiedToken.id);
-    if (!user) return res.json(false)
-
-    return res.json(true)
-}
-
 
 
 export const deleteUser = async (req, res) => {
@@ -28,42 +13,32 @@ export const deleteUser = async (req, res) => {
     }
 }
 
-export const loginUser = async (req, res) => {
+export const signin = async (req, res) => {
 
     try {
         const {email, password} = req.body
 
-        const user = await User.findOne({ email: email })
-        const foundEmail = await User.findOne({email: email})
+        const existingUser = await User.findOne({ email: email })
+        const isPasswordCorrect = await Bcrypt.compare(password, existingUser.password)
 
         if (!email || !password) {
             return res.status(400).json({msg: "Not all fields have been entered"})
         } 
 
-        if (!foundEmail) {
-            return res.status(400).json({msg: "Incorrect Email"})
+        if (!existingUser) {
+            return res.status(400).json({msg: "User doesn't exist"})
         }
 
-        // BCrypt.compare takes in the inputted Password && Compares it to the encrypted password
-        const isMatch = await Bcrypt.compare(password, user.password)
-
-        if (!isMatch) {
+        if (!isPasswordCorrect) {
             return res.status(400).json({msg: "Invalid Credentials"})
         }
    
         // JWT token looks for ID of the user._id and JWT password
         // Password is to verify it's not a duplicate web token
-        const token = Jwt.sign( { id: user._id }, process.env.JWT_SECRET )
+        const token = Jwt.sign( { email: existingUser.email, id: existingUser._id }, process.env.JWT_SECRET, { expiresIn: '1h'} )
 
-        res.json({
-            token,
-            user: {
-                id: user._id,
-                displayName: user.displayName,
-                email: user.email
-            }
-        })
-
+        res.status(200).json({ result: existingUser, token })
+  
     } catch (error) {
         return res
             .status(500)
@@ -71,12 +46,17 @@ export const loginUser = async (req, res) => {
     }
 }
 
-export const createUser =  async (req, res) => {
-    try {
-        let { email, password, passwordCheck, displayName } = req.body
+export const signup =  async (req, res) => {
 
-        if ( !email || !password || !passwordCheck ) {
-            return res.status(400).json({msg: "Not all fields have been entered"})
+    try {
+        let { email, password, passwordCheck, firstName, lastName } = req.body
+
+        if (!existingUser) return res.status(400).json({ msg: "User already exists"})
+
+        if (password !== passwordCheck) {
+            return res
+                .status(400)
+                .json({msg: "Passwords do not match"})
         }
 
         if ( password.length < 5 ) {
@@ -85,38 +65,22 @@ export const createUser =  async (req, res) => {
                 .json({msg: "Password needs to be at least 5 characters long"})
         }
 
-        if (password !== passwordCheck) {
-            return res
-                .status(400)
-                .json({msg: "Password do not match"})
-        }
-
-        const existingUser = await User.findOne({email: email})
-
-        if (existingUser) {
-            return res
-                .status(400)
-                .json({msg: "An account with this email already exists."})
-        } 
-
-        if (!displayName) displayName = email;
-
+        //salt is the level of difficulty you want the encryption to be
         const salt = await Bcrypt.genSalt();
         // Bcrypt.hash requires the string to encrypt, and the salt
-        const passwordHash = await Bcrypt.hash(password, salt)
+        const hashedPassword = await Bcrypt.hash(password, salt)
         
-        const newUser = new User({
+        const newUser = await User.create({
             email: email,
-            password: passwordHash,
-            displayName: displayName
+            password: hashedPassword,
+            name: `${firstName} ${lastName}`
         });
 
-        const savedUser = await newUser.save();
-        res.json(savedUser);
+        const token = Jwt.sign( { email: newUser.email, id: newUser._id }, process.env.JWT_SECRET, { expiresIn: '1h'} )
+        
+        res.status(200).json({ result: newUser, token })
 
     } catch (err) {
         res.status(500).json({error: err.message})
     }
 }
-
-

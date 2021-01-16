@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { Home, About, Services, Contact, Register, NaviBar, Jumbo, Footer} from './components/';
-import LoginFormContainer from './components/Session_Forms/Login_form_container';
+import { Home, About, Services, Contact, Register, NaviBar, Footer, LoginForm} from './components/';
 
 const App = () => {
   return (
@@ -14,7 +13,7 @@ const App = () => {
             <Route exact path='/services' component={Services} />
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/register' component={Register} />
-            <Route exact path='/login' component={LoginFormContainer} />
+            <Route exact path='/login' component={LoginForm} />
           </Switch>
         </Router>
       <Footer />
