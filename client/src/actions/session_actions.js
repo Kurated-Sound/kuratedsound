@@ -1,23 +1,27 @@
 
 import { AUTH } from '../constants/actionTypes';
-import * as api from '../api/index.js'
+import * as api from '../api/session_api_util'
 
 //action Creators Async => Have to use a Thunk action for async
-export const signIn = (formData, history) => async (dispatch){
+export const signIn = (formData, history) => async (dispatch) => {
   try {
     // log in the user 
+    const { data } = await api.signIn(formData)
 
-    // after log in will redirect to homepage 
+    dispatch({ type: AUTH, data });
+
     history.push('/')
     console.log('youve been signed it and it works')
   } catch (error) {
       console.log(error)
   }
 }
-export const signUp = (formData, history) => async (dispatch){
+export const signUp = (formData, history) => async (dispatch) => {
   try {
     // sign up the user 
+    const { data } = await api.signIn(formData)
 
+    dispatch({ type: AUTH, data });
     // after log in will redirect to homepage 
     history.push('/')
 

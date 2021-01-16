@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -51,12 +51,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MainFeaturedPost(props) {
   const classes = useStyles();
-  const { post } = props;
+  // const { post } = props;
 
   return (
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://images.pexels.com/photos/111117/pexels-photo-111117.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)` }}>
       {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src='url(https://images.pexels.com/photos/111117/pexels-photo-111117.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)'/>}
+      {<img style={{ display: 'none' }} src='url(https://images.pexels.com/photos/111117/pexels-photo-111117.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)' alt='hi'/>}
       <div className='header-1' />
       <Grid container>
         <Grid item md={6}>

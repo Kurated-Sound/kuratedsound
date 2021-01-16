@@ -1,13 +1,32 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { createStore, applyMiddleware } from 'redux';
+// import thunk from 'redux-thunk';
+// import { Provider } from 'react-redux'
+// import { RootReducer } from './reducers/root_reducer.js';
+
+// import App from './App';
+
+// const store = createStore( RootReducer, applyMiddleware(thunk));
+
+// ReactDOM.render( 
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById('root')
+//   );
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+// import App from './App';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { setAuthToken } from "./api/session_api_util";
 import jwt_decode from "jwt-decode";
 import configureStore from "./store/store";
-import { logoutUser } from './actions/session_actions'
+// import { logoutUser } from './actions/session_actions'
 
 import Root from "./components/root";
 
@@ -34,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // If the user's token has expired
     if (decodedUser.exp < currentTime) {
       // Logout the user and redirect to the login page
-      store.dispatch(logoutUser());
+      // store.dispatch(logout());
       window.location.href = "/";
     }
   } else {
