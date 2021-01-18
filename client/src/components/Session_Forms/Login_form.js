@@ -152,6 +152,7 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
+ 
 
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
