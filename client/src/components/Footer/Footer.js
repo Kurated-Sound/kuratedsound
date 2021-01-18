@@ -15,11 +15,11 @@ const Footer = () => {
               <div className='col text-center'>
                 <h5 className='lead text-center'>Kurated Sound</h5>
                 <ul className='list-unstyled flex-lg-row justify-content-center'>
-                  <li><a href='https://www.instagram.com/kuratedsound/' className='custom-link'><i class="fab fa-instagram fa-fw"></i></a></li>
-                  <li><a href='https://www.facebook.com/profile.php?id=100009945706613' className='custom-link'><i class="fab fa-facebook-f fa-fw"></i></a></li>
-                  <li><a href='https://www.yelp.com/kuratedsound' className='custom-link'><i class="fab fa-yelp fa-fw"></i></a></li>
-                  <li><a href='https://www.youtube.com/kuratedsound' className='custom-link'><i class="fab fa-youtube fa-fw"></i></a></li>
-                  <li><a href='https://www.twitch.tv/kuratedsound' className='custom-link'><i class="fab fa-twitch fa-fw"></i></a></li>
+                  <li><a href='https://www.instagram.com/kuratedsound/' className='custom-link'><i className="fab fa-instagram fa-fw"></i></a></li>
+                  <li><a href='https://www.facebook.com/profile.php?id=100009945706613' className='custom-link'><i className="fab fa-facebook-f fa-fw"></i></a></li>
+                  <li><a href='https://www.yelp.com/kuratedsound' className='custom-link'><i className="fab fa-yelp fa-fw"></i></a></li>
+                  <li><a href='https://www.youtube.com/kuratedsound' className='custom-link'><i className="fab fa-youtube fa-fw"></i></a></li>
+                  <li><a href='https://www.twitch.tv/kuratedsound' className='custom-link'><i className="fab fa-twitch fa-fw"></i></a></li>
                 </ul>
               </div>
             </div>
