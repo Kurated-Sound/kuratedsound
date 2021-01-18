@@ -1,6 +1,6 @@
 import React from 'react';
 import './CloseOutCard.css';
-import { Container, Jumbotron, Button } from 'react-bootstrap';
+import { Jumbotron, Button } from 'react-bootstrap';
 
 const CloseOutCard = () => {
   return (

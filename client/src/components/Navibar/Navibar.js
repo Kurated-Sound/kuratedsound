@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Navibar.css';
-import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Navibar = () => {
   return (
