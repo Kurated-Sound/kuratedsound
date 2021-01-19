@@ -1,19 +1,17 @@
 import React from 'react';
 import './Home.css';
-import { Container } from 'react-bootstrap';
+import Container  from '@material-ui/core/Container';
 import ImageCard from '../Cards/ImageCard.js';
 import CloseOutCard from '../Cards/CloseOutCard.js';
 import BrandLogosCard from '../Cards/BrandLogosCard';
 import BlankTextCard from '../Cards/BlankTextCard';
+// import TripleCards from '../Cards/TripleCards';
 import Jumbo from './Jumbo';
 
 const Home = () => (
   <Container className='full-container'>
     <Jumbo />
-    <BlankTextCard />
-    <hr />
-    <BrandLogosCard />
-    <hr />
+    {/* <TripleCards /> */}
     <ImageCard />
     <CloseOutCard />
   </Container>
