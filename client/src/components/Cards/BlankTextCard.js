@@ -1,6 +1,6 @@
 import React from 'react';
 import './BlankTextCard.css';
-import { Jumbotron, Button, Container } from 'react-bootstrap';
+import {Container } from 'react-bootstrap';
 
 const BlankTextCard = () => (
 
