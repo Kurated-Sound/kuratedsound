@@ -2,13 +2,8 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
-<<<<<<< Updated upstream
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-=======
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
->>>>>>> Stashed changes
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -72,11 +67,7 @@ export default function BrandLogosCard() {
   }
 
     return (
-<<<<<<< Updated upstream
           <Container className={classes.cardGrid} style={{maxWidth:"100%"}}>
-=======
-          <Container className={classes.cardGrid} style={{maxWidth:'100%'}}>
->>>>>>> Stashed changes
               {/* End hero unit */}
               <Grid container spacing={0} className={classes.grid}>
                 {generateCards()}

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react'
 import './NavibarStyle.js';
-import { Link } from 'react-router-dom';
 // import Navbar from 'react-bootstrap/Navbar';
 // import Nav from 'react-bootstrap/Nav';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -13,7 +12,6 @@ import ListItem from "@material-ui/core/ListItem";
 import Email from "@material-ui/icons/Email";
 // core components
 import Header from "./Header/Header.js";
-// import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "./CustomButtons/Button";
 
 const useStyles = makeStyles(navbarsStyle);
@@ -42,70 +40,46 @@ const classes = useStyles();
   <Header
   brand="Navbar with notifications"
   color="dark"
-  links={
-    <List className={classes.list + " " + classes.mlAuto}>
-      <ListItem className={classes.listItem}>
-        <Button
-          href="#pablo"
-          className={classes.navLink}
-          onClick={e => e.preventDefault()}
-          color="transparent"
-        >
-          Discover
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          href="#pablo"
-          className={classes.navLink}
-          onClick={e => e.preventDefault()}
-          color="transparent"
-        >
-          Wishlist
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          href="#pablo"
-          className={classes.notificationNavLink}
-          onClick={e => e.preventDefault()}
-          color="rose"
-          justIcon
-          round
-        >
-          <Email />
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        {/* <CustomDropdown
-          left
-          caret={false}
-          hoverColor="dark"
-          dropdownHeader="Dropdown Header"
-          buttonText={
-            <img
-              src={profileImage}
-              className={classes.img}
-              alt="profile"
-            />
-          }
-          buttonProps={{
-            className:
-              classes.navLink + " " + classes.imageDropdownButton,
-            color: "transparent"
-          }}
-          dropdownList={[
-            "Me",
-            "Settings and other stuff",
-            "Sign out"
-          ]}
-        /> */}
-      </ListItem>
-    </List>
-  }
+  // links={
+    // <List className={classes.list + " " + classes.mlAuto}>
+    //   <ListItem className={classes.listItem}>
+    //     <Button
+    //       href="#pablo"
+    //       className={classes.navLink}
+    //       onClick={e => e.preventDefault()}
+    //       color="transparent"
+    //     >
+    //       Discover
+    //     </Button>
+    //   </ListItem>
+    //   <ListItem className={classes.listItem}>
+    //     <Button
+    //       href="#pablo"
+    //       className={classes.navLink}
+    //       onClick={e => e.preventDefault()}
+    //       color="transparent"
+    //     >
+    //       Wishlist
+    //     </Button>
+    //   </ListItem>
+    //   <ListItem className={classes.listItem}>
+    //     <Button
+    //       href="#pablo"
+    //       className={classes.notificationNavLink}
+    //       onClick={e => e.preventDefault()}
+    //       color="rose"
+    //       justIcon
+    //       round
+    //     >
+    //       <Email />
+    //     </Button>
+    //   </ListItem>
+    //   <ListItem className={classes.listItem}>
+    //   </ListItem>
+    // </List>
+  // }
 />
   );
 }
 
 export default Navibar;
-
