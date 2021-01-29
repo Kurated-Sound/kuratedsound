@@ -1,12 +1,12 @@
 import React from 'react'
-import BlankTextCard from '../Cards/BlankTextCard';
-import BrandLogosCard from '../Cards/BrandLogosCard';
+// import BlankTextCard from '../Cards/BlankTextCard';
+// import BrandLogosCard from '../Cards/BrandLogosCard';
 
 const Services = () => (
   <div>
-    <BlankTextCard />
+    {/* <BlankTextCard /> */}
     <hr />
-    <BrandLogosCard />
+    {/* <BrandLogosCard /> */}
     <hr />
     <h1>Services:</h1>
     <p>DJ</p>

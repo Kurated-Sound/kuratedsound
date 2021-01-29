@@ -1,20 +1,12 @@
 import React from 'react';
 import './Home.css';
-import Container  from '@material-ui/core/Container';
-import ImageCard from '../Cards/ImageCard.js';
-import CloseOutCard from '../Cards/CloseOutCard.js';
-import BrandLogosCard from '../Cards/BrandLogosCard';
-import BlankTextCard from '../Cards/BlankTextCard';
-// import TripleCards from '../Cards/TripleCards';
-import Jumbo from './Jumbo';
+import { Grid } from '@material-ui/core';
 
 const Home = () => (
-  <Container className='full-container'>
-    <Jumbo />
-    {/* <TripleCards /> */}
-    <ImageCard />
-    <CloseOutCard />
-  </Container>
+  <Grid container>
+    <Grid item>
+    </Grid>
+  </Grid>
 );
 
-export default Home;
+export default Home; 
