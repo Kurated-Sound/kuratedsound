@@ -3,7 +3,7 @@ import {
   blackColor,
   grayColor,
   hexToRgb
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../../assets/jss/material-kit-pro-react-file.js";
 
 const tooltipsStyle = {
   tooltip: {

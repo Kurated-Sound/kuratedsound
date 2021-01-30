@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button";
 // original
 // import buttonStyle from "assets/jss/material-kit-pro-react/components/buttonStyle.js";
 // updated
-import buttonStyle from "./assets/jss/material-kit-pro-react/components/buttonStyle.js";
+import buttonStyle from "../../assets/jss/material-kit-pro-react/components/buttonStyle.js";
 // import { buttonStyle } from "./assets/jss/material-kit-pro-react/components";
 
 // original

@@ -1,18 +1,3 @@
-// import React from 'react'
-// import { AppBar, Toolbar, Typography } from '@material-ui/core';
-
-// const Header = () => {
-//   return (
-//     <AppBar>
-//     <Toolbar>
-//       <Typography>Kurated Sound</Typography>
-//     </Toolbar>
-//     </AppBar>
-//   )
-// }
-
-// export default Header;
-
 import React from "react";
 
 // @material-ui/core components
@@ -33,14 +18,29 @@ import Header from "../prokit-src/muicomponents/Header/Header.js";
 import CustomInput from "../prokit-src/muicomponents/CustomInput/CustomInput.js";
 import CustomDropdown from "../prokit-src/muicomponents/CustomDropdown/CustomDropdown.js";
 import Button from "../prokit-src/muicomponents/CustomButtons/Button.js";
+import HeaderLinks from "../prokit-src/muicomponents/Header/HeaderLinks.js";
 
-// import navbarsStyle from "/prokit-src/assets/jss/material-kit-pro-react/views/componentsSections/navbarsStyle.js";
+// import navbarsStyle from "assets/jss/material-kit-pro-react/views/componentsSections/navbarsStyle.js";
+import navbarsStyle from "../prokit-src/assets/jss/material-kit-pro-react/views/componentsSections/navbarsStyle";
 
 import image from "../prokit-src/assets/img/bg.jpg";
 import profileImage from "../prokit-src/assets/img/faces/avatar.jpg";
 
 const useStyles = makeStyles(navbarsStyle);
 
-export default function SectionNavbars() {
-
+export default function SectionNavbars({ ...rest }) {
+  const classes = useStyles();
+  return (
+    <Header
+      color="transparent"
+      brand="Material Kit PRO React"
+      links={<HeaderLinks dropdownHoverColor="info" />}
+      fixed
+      changeColorOnScroll={{
+        height: 300,
+        color: "info",
+      }}
+      {...rest}
+    />
+  );
 }

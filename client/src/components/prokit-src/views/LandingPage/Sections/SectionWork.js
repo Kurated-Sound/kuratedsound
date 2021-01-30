@@ -5,12 +5,14 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "../../../muicomponents/Grid/GridContainer.js";
+import GridItem from "../../../muicomponents/Grid/GridItem.js";
+import CustomInput from "../../../muicomponents/CustomInput/CustomInput.js";
+// import Button from "components/CustomButtons/Button.js";
+import Button from "../../../muicomponents/CustomButtons/Button.js";
 
-import workStyle from "assets/jss/material-kit-pro-react/views/landingPageSections/workStyle.js";
+// import workStyle from "assets/jss/material-kit-pro-react/views/landingPageSections/workStyle.js";
+import workStyle from "../../../assets/jss/material-kit-pro-react/views/landingPageSections/workStyle.js";
 
 const useStyles = makeStyles(workStyle);
 
@@ -34,7 +36,7 @@ export default function SectionWork() {
                   labelText="Your Name"
                   id="name"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                 />
               </GridItem>
@@ -43,7 +45,7 @@ export default function SectionWork() {
                   labelText="Your Email"
                   id="email"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                 />
               </GridItem>
@@ -52,11 +54,11 @@ export default function SectionWork() {
                 id="message"
                 formControlProps={{
                   fullWidth: true,
-                  className: classes.textArea
+                  className: classes.textArea,
                 }}
                 inputProps={{
                   multiline: true,
-                  rows: 5
+                  rows: 5,
                 }}
               />
               <GridItem
