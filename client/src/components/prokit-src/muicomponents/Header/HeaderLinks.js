@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
@@ -13,7 +12,7 @@ import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
 import Apps from "@material-ui/icons/Apps";
-import ShoppingCart from "@material-ui/icons/ShoppingCart";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import ViewDay from "@material-ui/icons/ViewDay";
 import Dns from "@material-ui/icons/Dns";
 import Build from "@material-ui/icons/Build";
@@ -90,7 +89,7 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list + " " + classes.mlAuto}>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
@@ -119,8 +118,38 @@ export default function HeaderLinks(props) {
             </a>,
           ]}
         />
+      </ListItem> */}
+      <ListItem className={classes.listItem}>
+        <Button
+          href="#pablo"
+          className={classes.navLink + " " + classes.navLinkActive}
+          onClick={(e) => e.preventDefault()}
+          color="transparent"
+        >
+          About
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
+        <Button
+          href="#pablo"
+          className={classes.navLink}
+          onClick={(e) => e.preventDefault()}
+          color="transparent"
+        >
+          Services
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          href="#pablo"
+          className={classes.navLink}
+          onClick={(e) => e.preventDefault()}
+          color="transparent"
+        >
+          Contact
+        </Button>
+      </ListItem>
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
@@ -190,8 +219,8 @@ export default function HeaderLinks(props) {
             </Link>,
           ]}
         />
-      </ListItem>
-      <ListItem className={classes.listItem}>
+      </ListItem> */}
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
@@ -244,16 +273,17 @@ export default function HeaderLinks(props) {
             </Link>,
           ]}
         />
-      </ListItem>
+      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkpr-navbar"
+          href=""
           color={window.innerWidth < 960 ? "info" : "white"}
           target="_blank"
           className={classes.navButton}
           round
         >
-          <ShoppingCart className={classes.icons} /> buy now
+          <KeyboardArrowRightIcon className={classes.icons} />
+          Login
         </Button>
       </ListItem>
     </List>
