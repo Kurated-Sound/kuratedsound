@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { Container } from "@material-ui/core";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -15,8 +16,7 @@ import {
 
 const App = () => (
   <BrowserRouter>
-    <Container>
-      {/* <Header /> */}
+    <Container className="container-1">
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
@@ -25,7 +25,6 @@ const App = () => (
         <Route path="/register" exact component={Register} />
         <Route path="/auth" exact component={Auth} />
       </Switch>
-      {/* <Footer /> */}
     </Container>
   </BrowserRouter>
 );

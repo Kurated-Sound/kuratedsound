@@ -9,6 +9,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 // core components
 import Button from "../prokit-src/muicomponents/CustomButtons/Button.js";
 import Header from "../prokit-src/muicomponents/Header/Header.js";
@@ -48,7 +49,7 @@ export default function LandingPage({ ...rest }) {
       />
       <Parallax
         image={require("../prokit-src/assets/img/bg8.jpg")}
-        filter="dark"
+        filter="primary"
       >
         <div className={classes.container}>
           <GridContainer>
@@ -60,13 +61,14 @@ export default function LandingPage({ ...rest }) {
               </h4>
               <br />
               <Button
-                color="danger"
+                color="white"
                 size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
+                href="https://soundcloud.com/kleos92"
                 target="_blank"
               >
-                <i className="fas fa-play" />
-                Watch video
+                {/* <i className="fas fa-play" /> */}
+                <KeyboardArrowRightIcon className={classes.icons} />
+                Learn More
               </Button>
             </GridItem>
           </GridContainer>
@@ -90,7 +92,7 @@ export default function LandingPage({ ...rest }) {
                     target="_blank"
                     className={classes.block}
                   >
-                    Creative Tim
+                    Kurated Sound
                   </a>
                 </ListItem>
                 <ListItem className={classes.inlineBlock}>

@@ -1,11 +1,8 @@
 import React from "react";
-import "./Home.css";
-import { Grid } from "@material-ui/core";
 import LandingPage from "../Hero/Hero.js";
 
-//Core Components
-// import Parallax from "../prokit-src/muicomponents/Parallax/Parallax.js";
-
-const Home = () => <LandingPage />;
+const Home = () => {
+  return <LandingPage />;
+};
 
 export default Home;
