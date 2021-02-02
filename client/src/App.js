@@ -16,7 +16,7 @@ import {
 
 const App = () => (
   <BrowserRouter>
-    <Container className="container-1">
+    <Container className="container-1" disableGutter={true}>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
