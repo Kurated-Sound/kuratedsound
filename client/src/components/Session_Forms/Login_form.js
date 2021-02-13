@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -14,8 +14,10 @@ import {useStyles} from './loginFormStyles';
 
 export default function SessionForm() {
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
